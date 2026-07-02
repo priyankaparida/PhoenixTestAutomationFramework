@@ -1,0 +1,135 @@
+{
+  "type": "object",
+  "properties": {
+    "message": {
+      "type": "string",
+      "examples": [
+        "Success"
+      ]
+    },
+    "data": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "examples": [
+            4
+          ]
+        },
+        "first_name": {
+          "type": "string",
+          "examples": [
+            "fd"
+          ]
+        },
+        "last_name": {
+          "type": "string",
+          "examples": [
+            "fd"
+          ]
+        },
+        "login_id": {
+          "type": "string",
+          "examples": [
+            "iamfd"
+          ]
+        },
+        "mobile_number": {
+          "type": "string",
+          "examples": [
+            "8899776655"
+          ]
+        },
+        "email_id": {
+          "type": "string",
+          "examples": [
+            "mark@gmail.com"
+          ],
+          "format": "email"
+        },
+        "password": {
+          "type": "string",
+          "examples": [
+            "5f4dcc3b5aa765d61d8327deb882cf99"
+          ]
+        },
+        "reset_password_date": {
+          "type": "null"
+        },
+        "lock_status": {
+          "type": "integer",
+          "examples": [
+            0
+          ]
+        },
+        "is_active": {
+          "type": "integer",
+          "examples": [
+            1
+          ]
+        },
+        "mst_role_id": {
+          "type": "integer",
+          "examples": [
+            5
+          ]
+        },
+        "mst_service_location_id": {
+          "type": "integer",
+          "examples": [
+            1
+          ]
+        },
+        "created_at": {
+          "type": "string",
+          "examples": [
+            "2021-11-03T08:06:23.000Z"
+          ],
+          "format": "date-time"
+        },
+        "modified_at": {
+          "type": "string",
+          "examples": [
+            "2021-11-03T08:06:23.000Z"
+          ],
+          "format": "date-time"
+        },
+        "role_name": {
+          "type": "string",
+          "examples": [
+            "FrontDesk"
+          ]
+        },
+        "service_location": {
+          "type": "string",
+          "examples": [
+            "Service Center A"
+          ]
+        }
+      },
+      "required": [
+        "id",
+        "first_name",
+        "last_name",
+        "login_id",
+        "mobile_number",
+        "email_id",
+        "password",
+        "reset_password_date",
+        "lock_status",
+        "is_active",
+        "mst_role_id",
+        "mst_service_location_id",
+        "created_at",
+        "modified_at",
+        "role_name",
+        "service_location"
+      ]
+    }
+  },
+  "required": [
+    "message",
+    "data"
+  ],
+  "$schema": "https://json-schema.org/draft/2020-12/schema"
+}
