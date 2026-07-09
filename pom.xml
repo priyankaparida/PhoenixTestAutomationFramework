@@ -7,9 +7,9 @@
   <description>PhoenixTestAutomationFramework_1</description>
   
   <properties>
-  	<maven.source.compiler> 11 </maven.source.compiler>
+  	<maven.source.compiler> 14 </maven.source.compiler>
   
-  	<maven.target.compiler> 11 </maven.target.compiler>
+  	<maven.target.compiler> 14 </maven.target.compiler>
   	</properties>
   	<dependencies>
   <!-- Source: https://mvnrepository.com/artifact/io.rest-assured/rest-assured -->
