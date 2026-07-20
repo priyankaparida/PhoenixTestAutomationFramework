@@ -1,0 +1,47 @@
+{
+  "type": "object",
+  "properties": {
+    "message": {
+      "type": "string",
+      "examples": [
+        "Success"
+      ]
+    },
+    "data": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "label": {
+            "type": "string",
+            "examples": [
+              "Pending for delivery"
+            ]
+          },
+          "key": {
+            "type": "string",
+            "examples": [
+              "pending_for_delivery"
+            ]
+          },
+          "count": {
+            "type": "integer",
+            "examples": [
+              0
+            ]
+          }
+        },
+        "required": [
+          "label",
+          "key",
+          "count"
+        ]
+      }
+    }
+  },
+  "required": [
+    "message",
+    "data"
+  ],
+  "$schema": "https://json-schema.org/draft/2020-12/schema"
+}
