@@ -6,6 +6,8 @@ import java.io.IOException;
 
 import org.testng.annotations.Test;
 
+import com.api.utils.SpecUtil;
+
 import static com.api.constants.Role.*;
 import static com.api.utils.AuthTokenProvider.*;
 import static com.api.utils.ConfigManager.*;
@@ -20,19 +22,11 @@ public class CountAPITest {
 	public void countAPIResponse() throws IOException {
 		
 		given()
-		.baseUri(getProperty("BASE_URI"))
-		.and()
-		.header("Authorization",getToken(FD))
-		.log().uri()
-		.log().method()
-		.log().headers()
+		.spec(SpecUtil.requestSpecWithAuth(FD))
 		.when()
 		.get("/dashboard/count")
 		.then()
-		.log().all()
-		.statusCode(200)
-		.and()
-		.time(lessThan(1000L))
+		.spec(SpecUtil.responseSpec_OK())
 		.body("message",equalTo("Success"))
 		.body("data", notNullValue())
 		.body("data.size()", equalTo(3))
@@ -46,15 +40,11 @@ public class CountAPITest {
 	public void countAPITest_MissingAuthToken() throws IOException {
 		
 		given()
-		.baseUri(getProperty("BASE_URI"))
-		.log().uri()
-		.log().method()
-		.log().headers()
+		.spec(SpecUtil.requestSpec())
 		.when()
 		.get("/dashboard/count")
 		.then()
-		.log().all()
-		.statusCode(401);
+		.spec(SpecUtil.responseSpec_TEXT(401));
 		
 	}
 }
