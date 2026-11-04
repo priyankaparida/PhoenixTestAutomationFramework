@@ -64,7 +64,23 @@ public static RequestSpecification requestSpecWithAuth(Role role) throws IOExcep
 			return requestSpecification;
 	
 }
-
+public static RequestSpecification requestSpecWithAuthRole(Role role,Object payload) throws IOException {
+	
+	RequestSpecification requestSpecification=new RequestSpecBuilder()
+			.setBaseUri(getProperty("BASE_URI"))
+			.setContentType(ContentType.JSON)
+			.setAccept(ContentType.JSON)
+			.addHeader("Authorization", AuthTokenProvider.getToken(role))
+			.setBody(payload)
+			.log(LogDetail.URI)
+			.log(LogDetail.BODY)
+			.log(LogDetail.METHOD)
+			.log(LogDetail.HEADERS)
+			.build();
+			
+			return requestSpecification;
+	
+}
 public static ResponseSpecification responseSpec_OK() {
 	
 	ResponseSpecification responseSpecification=new ResponseSpecBuilder()
